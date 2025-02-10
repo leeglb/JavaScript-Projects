@@ -1,0 +1,50 @@
+:root { 
+    --button-width: 400px;
+}
+
+body { 
+    background-color: black;
+}
+
+body { 
+    color: white; 
+}
+
+h1 {
+    text-align: center;
+}
+
+#main-div > #calorie-form{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+#main-div > input, #convert-btn, select { 
+
+    margin-top: 40px;
+}
+
+#calorie-form > input { 
+    width: var(--button-width);
+    height: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#calorie-form > #convert-btn { 
+    width: var(--button-width);
+    height: 30px;
+    font-size: 15px;
+    
+}
+
+#calorie-form > select { 
+    width: var(--button-width);
+    height: 30px;
+    text-align: center;
+}

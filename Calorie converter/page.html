@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="device-width, initial-scale=1.0">
+        <title>Calorie Converter</title>
+        <link rel="stylesheet" href="styles.css">
+    </header>
+    
+    <body>
+        <h1 id="heading">Calorie and Kilojoule Converter </h1>
+        <div id="main-div">
+          <form id="calorie-form" action="" method="post">
+            <input id="input" type="number">
+            <select id="selected">
+                <option value="0" id="options">Choose Conversion</option>
+                <option value="1" id="options">Kilojoule to Calorie</option>
+                <option value="2" id="options">Calorie to Kilojoule</option>
+            </select>
+            <input id="convert-btn" type="submit" value="Convert"></input>
+        </form>
+            
+            <div id="results-div"></div>
+        
+        </div>
+        
+        <script src="func.js"></script>
+    </body>
+</html>
