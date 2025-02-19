@@ -1,4 +1,4 @@
-let price = 12.98;
+let price = 12.20;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -58,77 +58,6 @@ function returnChange(money) {
     // whole section is to see if it is above 10 or equal to 10 ig
     if(string.length >= 2) {
 
-            //decimal section
-        if(string.includes(decimal)) {
-            let decimalValues = string.slice(string.indexOf(decimal)); //gives our decimals
-            let valueOne = Number(decimalValues[1]);
-            let ValueTwo = Number(decimalValues[2]);
-        
-            let decimalNum = Number(valueOne / 10);
-            let decimalNumTwo = Number(ValueTwo / 100);
-
-            if(decimalValues.toString().length <= 4) {
-
-                while(decimalNum >= division[decimalIndex][1]) {
-                    decimalIndex++;
-                }
-                if(decimalNum <= division[decimalIndex][1]) {
-                    decimalIndex--;
-                }
-            
-                if(decimalNum / division[decimalIndex][1] != 0 && decimalNum >= division[decimalIndex][1]) {
-                    let equation = Math.floor(decimalNum / division[decimalIndex][1]);
-                    cid[decimalIndex][1] -= equation * division[decimalIndex][1];
-                    changeBack += `\n${cid[decimalIndex][0]}, ${copy[decimalIndex][1] - cid[decimalIndex][1]}`;
-                    newNum = (decimalNum - division[decimalIndex][1] * equation).toFixed(2);
-            
-                    while(newNum / division[decimalIndex][1] <= 1) {
-                        decimalIndex--;
-                        cid[decimalIndex][1] -= (newNum.toString()[2] / 10);
-                        changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
-                        
-                    }
-                    
-                     
-                }
-            }
-
-            
-
-            if(decimalValues.toString().length > 4) { 
-                while(decimalNumTwo >= division[decimalIndex][1]) {
-                    decimalIndex++;
-                }
-                if(decimalNumTwo <= division[decimalIndex][1]) {
-                    decimalIndex--;
-                }
-                if(decimalNumTwo / division[decimalIndex][1] != 0 && decimalNumTwo >= division[decimalIndex][1]) {
-                    let equation = Math.floor(decimalNumTwo / division[decimalIndex][1]);
-                    cid[decimalIndex][1] -= equation * division[decimalIndex][1];
-                    changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
-                    newNum = (decimalNumTwo - division[decimalIndex][1] * equation).toFixed(2);
-                    console.log(newNum);
-                    console.log(division[decimalIndex][1]);
-                    while(newNum / division[decimalIndex][1] >= 1) { //0.06 / 0.05
-                        decimalIndex--;
-                        cid[decimalIndex][1] -= (newNum.toString()[3] / 100);
-                        changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
-                    }
-                    while(newNum / division[decimalIndex][1] < 1) {
-                        decimalIndex--;
-                        cid[decimalIndex][1] -= (newNum.toString()[3] / 100);
-                        changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
-
-                    }
-
-                    
-                }
-
-                
-            }
-            
-        }
-
         num = Number(stringFirst * 10); 
 
         while(num >= division[index][1]) { // while and if succcesfully provide our entry point  
@@ -180,6 +109,51 @@ function returnChange(money) {
             }
         }
 
+        //decimal section
+        if(string.includes(decimal)) {
+            let decimalValues = string.slice(string.indexOf(decimal)); //gives our decimals
+        
+
+            if(decimalValues.length != 0) { // to see if the system has any
+                let valueOne = Number(decimalValues[1]);
+                let decimalNum = Number(valueOne / 10);
+               
+                while(decimalNum >= division[decimalIndex][1]) {
+                    decimalIndex++;
+                }
+                if(decimalNum <= division[decimalIndex][1]) {
+                    decimalIndex--;
+                }
+            
+                if(decimalNum / division[decimalIndex][1] != 0 && decimalNum >= division[decimalIndex][1]) {
+                
+                    let equation = Math.floor(decimalNum / division[decimalIndex][1]);
+                    cid[decimalIndex][1] -= equation * division[decimalIndex][1];
+                    changeBack += `\n${cid[decimalIndex][0]}, ${copy[decimalIndex][1] - cid[decimalIndex][1]}`;
+                    newNum = (decimalNum - division[decimalIndex][1] * equation).toFixed(2);
+                    
+                    
+
+                    while(division[decimalIndex][1] - newNum > 0) { 
+                        decimalIndex--;
+                        cid[decimalIndex][1] -= division[decimalIndex][1] * equation;
+                        changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
+                        if(division[decimalIndex][1] - newNum < 0) {
+                            decimalIndex--;
+                            cid[decimalIndex][1] -= division[decimalIndex][1] * equation;
+                            changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
+                        }
+                        console.log(division[decimalIndex]);
+                    }
+                    
+                     
+                }
+            }
+
+            
+            
+        }
+
     }
 
     // this will check for single digits. 
@@ -209,6 +183,81 @@ function returnChange(money) {
             changeBack += `${cid[index][0]}, ${copy[index][1] - cid[index][1]}`;
             
         }
+
+        //decimal section
+        if(string.includes(decimal)) {
+            let decimalValues = string.slice(string.indexOf(decimal)); //gives our decimals
+          
+
+            if(decimalValues.length === 3) { // to see if the system has one decimal or less
+                let valueOne = Number(decimalValues[1]);
+                let decimalNum = Number(valueOne / 10);
+           
+                while(decimalNum >= division[decimalIndex][1]) {
+                    decimalIndex++;
+                }
+                if(decimalNum <= division[decimalIndex][1]) {
+                    decimalIndex--;
+                }
+            
+                if(decimalNum / division[decimalIndex][1] != 0 && decimalNum >= division[decimalIndex][1]) {
+                    let equation = Math.floor(decimalNum / division[decimalIndex][1]);
+                    cid[decimalIndex][1] -= equation * division[decimalIndex][1];
+                    changeBack += `\n${cid[decimalIndex][0]}, ${copy[decimalIndex][1] - cid[decimalIndex][1]}`;
+                    newNum = (decimalNum - division[decimalIndex][1] * equation).toFixed(2);
+
+                    while(newNum / division[decimalIndex][1] >= 1) {
+                        decimalIndex--;
+                        cid[decimalIndex][1] -= (newNum / 10);
+                        changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
+                        
+                    }
+                    
+                     
+                }
+            }
+
+            
+
+            if(decimalValues.toString().length > 3) { 
+
+                let valueOne = Number(decimalValues[1]);
+                let ValueTwo = Number(decimalValues[2]);
+            
+                let decimalNum = Number(valueOne / 10);
+                let decimalNumTwo = Number(ValueTwo / 100);
+
+                while(decimalNumTwo >= division[decimalIndex][1]) {
+                    decimalIndex++;
+                }
+                if(decimalNumTwo <= division[decimalIndex][1]) {
+                    decimalIndex--;
+                }
+                
+                if(decimalNumTwo / division[decimalIndex][1] != 0 && decimalNumTwo >= division[decimalIndex][1]) {
+                    let equation = Math.floor(decimalNumTwo / division[decimalIndex][1]);
+                    cid[decimalIndex][1] -= equation * division[decimalIndex][1];
+                    changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
+                    newNum = (decimalNumTwo - division[decimalIndex][1] * equation).toFixed(2);
+                    
+                    while(newNum / division[decimalIndex][1] >= 1) { //0.06 / 0.05
+                        decimalIndex--;
+                        cid[decimalIndex][1] -= (newNum.toString()[3] / 100);
+                        changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
+                    }
+                    while(newNum / division[decimalIndex][1] < 1) {
+                        decimalIndex--;
+                        cid[decimalIndex][1] -= (newNum.toString()[3] / 100);
+                        changeBack += `\n${cid[decimalIndex][0]}, ${(copy[decimalIndex][1] - cid[decimalIndex][1]).toFixed(2)}`;
+
+                    }
+
+                    
+                }
+                
+            }
+            
+        }
     
     }
     console.log(change);
@@ -218,5 +267,5 @@ function returnChange(money) {
 
 
 
-returnChange(27.48);
+returnChange(32.7);
 
