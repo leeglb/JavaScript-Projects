@@ -85,11 +85,23 @@ function returnChange(money) {
     if(division[index][1] != 1) {
       let equation = Math.floor(integerValues / division[index][1]);
       if(cid[index][1] * equation > cid[index][1]) { //if the value is larger than what we have. 
-          equation = cid[index][1] / division[index][1];
+          equation = cid[index][1] / division[index][1]; // = 3 
+          
+          
       }
-      cid[index][1] -= (integerValues - division[index][1]) * equation;
-      integerValues = Math.abs(integerValues - division[index][1] * equation);
+      while(cid[index][1] === 0) { 
+          index--;
+          equation = Math.floor(cid[index][1] / division[index][1]);
+          
+      }
+      
+      cid[index][1] -= division[index][1] * equation;
+      integerValues = integerValues - (division[index][1] * equation);
       changeBack += `${division[index][0]}: $${division[index][1] * equation} `;
+      console.log(cid[index][1], integerValues);
+      
+      
+      
       
     }
     
@@ -150,8 +162,4 @@ function returnChange(money) {
     
 }
 
-
-
-
-returnChange(32.7);
 
