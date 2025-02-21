@@ -1,4 +1,4 @@
-let price = 3.26;
+let price = 12.4;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -58,6 +58,100 @@ purchaseButton.addEventListener("click", () => {
     changeDue.textContent = returnChange(cashValue);
   }
 })
+
+function returnChange(money) { 
+
+  let changeInt = (money - price).toFixed(2);
+  let changeStr = changeInt.toString();
+  let decimal = ".";
+  let decimalValues = changeStr.slice(changeStr.indexOf(decimal))
+  let integerValues = Number(changeStr - decimalValues);
+  let decimalIndex = 0;
+  let index = 0;
+  let changeBack = "Status: OPEN ";
+
+ 
+
+  for(let i = 0; i < division.length; i++) { //check we are at for integers
+    if(integerValues - division[i][1] >= 0) {
+      index = i;  
+      
+    }
+    
+  } // 19 - 10 = 9 so now we are less than the 10 note.
+
+  while(integerValues >= division[index][1]) { //while the note is bigger, 
+    
+    if(division[index][1] != 1) {
+      let equation = Math.floor(integerValues / division[index][1]);
+      if(cid[index][1] * equation > cid[index][1]) { //if the value is larger than what we have. 
+          equation = cid[index][1] / division[index][1];
+      }
+      cid[index][1] -= (integerValues - division[index][1]) * equation;
+      integerValues = Math.abs(integerValues - division[index][1] * equation);
+      changeBack += `${division[index][0]}: $${division[index][1] * equation} `;
+      
+    }
+    
+    for(let i = 0; i < division.length; i++) { //check we are at
+      if(integerValues - division[i][1] >= 0) {
+        index = i;  
+      }
+    }
+    if(division[index][1] === 1) {
+      changeBack += `${division[index][0]}: $${division[index][1] * integerValues} `;
+      break;
+    }
+    
+    
+  }
+
+  // check for decimals 
+
+  for(let d = 0; d < division.length; d++) {
+    if(decimalValues - division[d][1] >= 0) {
+      decimalIndex = d;
+    }
+  }
+
+  while(decimalValues >= division[decimalIndex][1]) { //while the note is bigger, we repeat.
+    
+    if(decimalValues - division[decimalIndex] != 0) {
+      
+      let equation = Math.floor(decimalValues / division[decimalIndex][1]);
+      
+      cid[decimalIndex][1] -= (decimalValues - division[decimalIndex][1]) * equation;
+      decimalValues = Math.abs(decimalValues - division[decimalIndex][1] * equation).toFixed(2);
+      changeBack += `${division[decimalIndex][0]}: $${division[decimalIndex][1] * equation} `;
+      
+
+      
+    }
+    
+    for(let d = 0; d < division.length; d++) { //check we are at
+      if(decimalValues - division[d][1] >= 0) {
+        decimalIndex = d;  
+        
+      }
+    }
+    if(division[index][1] === 0.01) {
+      
+      changeBack += `${division[decimalIndex][0]}: $${division[decimalIndex][1] * (decimalValues * 10)} `;
+      break;
+    }
+    
+    
+  }
+    
+  
+  
+ 
+  return changeBack;
+    
+}
+
+
+
 
 returnChange(32.7);
 
