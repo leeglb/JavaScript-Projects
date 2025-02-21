@@ -2,8 +2,11 @@
     --button-width: 400px;
 }
 
+
 body { 
     background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    margin: 0;
     
 }
 
@@ -14,10 +17,10 @@ body {
 #navbar { 
     position: fixed;
     top: 0%;
-    
     background-color: lightgreen;
     width: 100vw;
     height: 3rem;
+    z-index: 1;
 }
 
 #navbar > nav {
@@ -48,7 +51,7 @@ body {
     background-color: rgb(255, 255, 255);
     width: 25rem;
     position: absolute;
-    top: 20rem;
+    top: 10rem;
     left: 20rem;
 }
 
@@ -65,43 +68,59 @@ body {
     font-size: 30px;
 }
 
-#main-div {
-    position: absolute;
-    top: 22rem;
-    right: 20rem;
+#food1, #food2, #food3 { 
+    margin-top: 10rem;
+    margin-left: 30rem;
 }
 
-#main-div > #calorie-form{
+#food1, #food2, #food3{ 
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 100%;    
 
+}
+
+#food1 { 
+    z-index: 2;
+}
+
+#food2 { 
+    z-index: 3;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+
+
+#calorieconverter-div > input, #convert-btn, select, #results-div { 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-}
-
-
-#main-div > input, #convert-btn, select { 
-
     margin-top: 40px;
 }
 
-#calorie-form > input { 
+#calorieconverter-div > input { 
     width: var(--button-width);
     height: 30px;
     font-size: 30px;
     text-align: center;
 }
 
-#calorie-form > #convert-btn { 
+#calorieconverter-div > #convert-btn { 
     width: var(--button-width);
     height: 30px;
     font-size: 15px;
     
 }
 
-#calorie-form > select { 
+#calorieconverter-div > select { 
     width: var(--button-width);
     height: 30px;
     text-align: center;
+}
+
+#results-div { 
+    font-size: 30px;
 }

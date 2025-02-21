@@ -5,9 +5,10 @@ const results = document.getElementById("results-div");
 
 
 convertBtn.addEventListener("click", () => { 
+
     let inputValue = calorieInput.value; 
 
-    results.textContent = inputValue;
+    caloriesToKJ(inputValue);
 
 })
 
@@ -15,7 +16,7 @@ function caloriesToKJ(calories) {
 
     let kilojoule = Number(calories) * 4.184; 
 
-    return `${kilojoule} kj`; 
+    results.textContent = `${kilojoule} kj`; 
 }
 
 function kjToCalories(kilojoule) { 
