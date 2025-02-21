@@ -11,9 +11,9 @@
         <div id="navbar">
             <nav>
                 <a href=""><li>Home</li></a>
-                <a href=""><li>Contact</li></a>
-                <a href=""><li>Food Information</li></a>
-                <a href=""><li>Why Health Matters</li></a>
+                <a href="#calories"><li>Calories</li></a>
+                <a href=""><li>Calorie Converter</li></a>
+                <a href=""><li>What To Eat</li></a>
             </nav>
         </div>
 
@@ -23,21 +23,47 @@
         </div>
         
         <img id="food1" src="health-food.jpg">
-        <img id="food2" src="fruit.jpg">
-        <img id="food3" src="protein.jpg">
+
+        <h1 id="calorietitle">Calories</h1>
         
-        <div id="calorieconverter-div">
-            <input id="input" type="number">
-            <select id="selected">
-                <option value="0" id="options">Choose Conversion</option>
-                <option value="1" id="options">Kilojoule to Calorie</option>
-                <option value="2" id="options">Calorie to Kilojoule</option>
-            </select>
-            <input id="convert-btn" type="submit" value="Convert"></input>
-            
-            <div id="results-div"></div>
-        
+        <div id="calories">
+            <div id="calorietext">
+                <div id="whatarecalories">
+                    <h1>What is a calorie? Why is it important to us?</h1>
+                    <p>A <strong>calorie</strong> is a unit of energy which we use to measure the amount of energy that food provides to us.
+                    Often times, many people confuse calories and kilojoules. Whilst both are units of measurement for energy, they provide different values.
+                    Considering the average person, there are 2000 calories for women or 2500 calories for men. This would then be represented as 8368 kilojoules for women,
+                    and 10460 kilojoules for men. Keep that in mind next time when you check the nutritional label of food. They are normally always labelled as
+                    kilojoules and not calories, thats why its important you track or convert it before consuming.
+                    The reason why we need to know calories is due to the law of thermodynamics. To lose weight / be in a caloric deficit, we need to burn more energy
+                    then we eat so that our bodies can use the extra stored energy as fuel (our fat). To gain weight / be in a caloric surplus, we need to consume more energy 
+                    than we burn, so that our bodie will store more of it as fat. This is the main concept that needs to be recognised when dieting / bulking.</p>
+                </div>
+    
+                <div id="trackingcalories">
+                    <h1>Why is it important we track calories?</h1>
+                    <p>Many new individuals who try to lose weight aim for certain diets which are often misleading and provide no additional benenfit. Often times
+                    these diets may even lead to further weight increases, demotivating the individual and ultimately leading to them giving up.</p>
+                </div>
+            </div>
+            <div id="calorieconverter">
+                <div id="calorieconverter-div">
+                    <form id="calorie-form" action="" method="post" name="calorie-form"> 
+                        <input id="input" type="number" placeholder="Calorie">
+                        <select id="selected" name="selected">
+                            <option value="0" id="options">Choose Conversion</option>
+                            <option value="1" id="options">Kilojoule to Calorie</option>
+                            <option value="2" id="options">Calorie to Kilojoule</option>
+                        </select>
+                       <input type="submit" id="convert-btn" value="Submit" name="submit"></input>
+                       
+                    </form>
+                    <input type="button" id="reset-btn" name="reset-btn" value="reset">
+                    <div id="results-div"></div>
+                </div>
+            </div>
         </div>
+        
         
         <script src="func.js"></script>
     </body>
