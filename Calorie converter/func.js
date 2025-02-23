@@ -34,6 +34,7 @@ form.addEventListener("submit", (e) => {
 
 resetBtn.addEventListener("click", () => {
     results.textContent = "";
+    
 })
 
 function caloriesToKJ(calories) { 

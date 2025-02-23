@@ -90,30 +90,38 @@ body {
     text-align: center;
     color: lightgreen;
     font-size: 40px;
-    background-color: rgb(255, 255, 255);
     width: auto;
     height: auto;
 }
 
 #calories { 
     display: flex;
+    flex: 1;
     justify-content: space-evenly;
-    align-items: center;
+    margin-top: 0rem;
+    background-color: white;
+    border-radius: 20px;
+    margin: 0 5rem;
 }
 
-#caloriestext { 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-top: 5rem;
-    margin-left: 2rem;
+#whatarecalories { 
+   height: 40rem;
+   
 }
 
 #whatarecalories, #trackingcalories { 
+    margin-left: 20rem;
     text-align: center;
     width: 45%;
     word-spacing: 0.25rem;
+    background-color: white;
+    border-radius: 40px;
+    padding: 20px;
     
+}
+
+#trackingcalories { 
+    margin-top: 2rem;
 }
 
 #whatarecalories, #trackingcalories > h1 { 
@@ -121,26 +129,50 @@ body {
     
 }
 
-#calorieconverter-div > input, #convert-btn, select, #results-div, #reset-btn { 
+
+#calorieconverter { 
+    background-color: white;
+    width: 45%;
+    margin-right: 5rem;
+    height: 40rem;
+    border-radius: 40px;
+
+}
+
+#calorieconverter > #calorieconverter-div > input, #convert-btn, select, #results-div, #reset-btn, #valueinput, #conversion { 
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 20rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 
-#calorieconverter-div > input { 
+#valueinput, #conversion { 
+    font-size: 20px;
+    font-style: italic;
+}
+
+#calorieconverter-div > #calorie-form > input, #selected { 
     width: var(--button-width);
     height: 30px;
-    font-size: 30px;
+    font-size: 20px;
+    font-style: italic;
     text-align: center;
 }
 
 #calorieconverter-div > #convert-btn, #reset-btn { 
     width: var(--button-width);
     height: 30px;
-    font-size: auto;
+    font-size: 20px;
+    font-style: italic;
+    
+}
+
+#reset-btn { 
+    width: calc(var(--button-width) - 20rem);
+    margin-left: 20rem;
     
 }
 
@@ -151,5 +183,5 @@ body {
 }
 
 #results-div { 
-    font-size: 30px;
+    font-size: 20px;
 }

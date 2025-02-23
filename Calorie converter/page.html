@@ -49,7 +49,9 @@
             <div id="calorieconverter">
                 <div id="calorieconverter-div">
                     <form id="calorie-form" action="" method="post" name="calorie-form"> 
-                        <input id="input" type="number" placeholder="Calorie">
+                        <legend id="valueinput">Value Input:</legend>
+                        <input id="input" type="number">
+                        <legend id="conversion">Conversion Type:</legend>
                         <select id="selected" name="selected">
                             <option value="0" id="options">Choose Conversion</option>
                             <option value="1" id="options">Kilojoule to Calorie</option>
@@ -58,8 +60,8 @@
                        <input type="submit" id="convert-btn" value="Submit" name="submit"></input>
                        
                     </form>
-                    <input type="button" id="reset-btn" name="reset-btn" value="reset">
                     <div id="results-div"></div>
+                    <input type="button" id="reset-btn" name="reset-btn" value="reset">
                 </div>
             </div>
         </div>
