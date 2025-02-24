@@ -1,5 +1,9 @@
 :root { 
     --button-width: 400px;
+    --background-color: rgb(239, 247, 222);
+    --h1textsize: 50px;
+    --h1color: lightgreen; 
+    --calorieh1: lightgreen; 
 }
 
 
@@ -97,31 +101,22 @@ body {
 #calories { 
     display: flex;
     flex: 1;
-    justify-content: space-evenly;
     margin-top: 0rem;
     background-color: white;
     border-radius: 20px;
     margin: 0 5rem;
 }
 
-#whatarecalories { 
-   height: 40rem;
-   
-}
 
 #whatarecalories, #trackingcalories { 
-    margin-left: 20rem;
+    margin-left: 10rem;
     text-align: center;
-    width: 45%;
-    word-spacing: 0.25rem;
+    width: 55%;
+    word-spacing: 0.27rem;
     background-color: white;
     border-radius: 40px;
     padding: 20px;
     
-}
-
-#trackingcalories { 
-    margin-top: 2rem;
 }
 
 #whatarecalories, #trackingcalories > h1 { 
@@ -142,23 +137,45 @@ body {
 #calorieconverter > #calorieconverter-div > input, #convert-btn, select, #results-div, #reset-btn, #valueinput, #conversion { 
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-right: 20rem;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+}
+
+#calorieconverter > #calorieconverter-div > #calorie-form > h2 { 
+    margin: 2rem auto;
+    margin-left: 5rem;
+    border-radius: 40px;
+    color: var(--h1color);
+    height: 30px;
+    width: 13rem;
+}
+
+#calorieconverter-div { 
+    margin-top: 3rem;   
+    margin-left: 20px;
 }
 
 
-#valueinput, #conversion { 
-    font-size: 20px;
-    font-style: italic;
+#calorie-form { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+
+#calorie-form > #selected, #convert-btn{
+    margin: 1rem auto;
+}
+
+
 
 #calorieconverter-div > #calorie-form > input, #selected { 
     width: var(--button-width);
+    border-radius: 40px;
+    border: 1px solid;
     height: 30px;
     font-size: 20px;
-    font-style: italic;
     text-align: center;
 }
 
@@ -166,7 +183,6 @@ body {
     width: var(--button-width);
     height: 30px;
     font-size: 20px;
-    font-style: italic;
     
 }
 
@@ -184,4 +200,21 @@ body {
 
 #results-div { 
     font-size: 20px;
+}
+
+#whattoeat { 
+    margin-top: 20rem;
+    background-color: white; 
+    border-radius: 40px;
+    margin: 20rem 5rem;
+    text-align: center;
+    height: 40rem;
+}
+
+#whattoeat > h1 { 
+    margin-top: 2rem;
+    background-color: var(--background-color);
+    font-size: var(--h1textsize);
+    color: var(--h1color);
+
 }

@@ -6,6 +6,7 @@ const resetBtn = document.getElementById("reset-btn");
 
 let selected = 0;
 let calorie = 0;
+let nightMode = false; 
 
 
 
