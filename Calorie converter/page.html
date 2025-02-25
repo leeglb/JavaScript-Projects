@@ -11,7 +11,7 @@
         <div id="navbar">
             <nav>
                 <a href=""><li>Home</li></a>
-                <a href="#calories"><li>Calories</li></a>
+                <a href="#calorietitle"><li>Calories</li></a>
                 <a href="#whattoeat"><li>What To Eat</li></a>
                 <a href=""><li>Contact</li></a>
             </nav>
@@ -26,6 +26,7 @@
 
         <h1 id="calorietitle">Calories</h1>
         
+        
         <div id="calories">
             <div id="calorietext">
                 <div id="whatarecalories">
@@ -36,7 +37,7 @@
                     and 10460 kilojoules for men. <br><br>
                     Keep that in mind next time when you check the nutritional label of food. They are normally always labelled as
                     kilojoules and not calories, thats why its important you track or convert it before consuming.
-                    The reason why we need to know calories is due to the law of thermodynamics. <br><br>
+                    The reason why we need to know what calories are is due to the law of thermodynamics. <br><br>
                     To lose weight / be in a caloric deficit, we need to burn more energy
                     then we eat so that our bodies can use the extra stored energy as fuel (our fat). To gain weight / be in a caloric surplus, we need to consume more energy 
                     than we burn, so that our bodie will store more of it as fat. This is the main concept that needs to be recognised when dieting / bulking.</p>
@@ -44,27 +45,57 @@
     
                 <div id="trackingcalories">
                     <h1>Why is it important we track calories?</h1>
-                    These diets may even lead to further weight increases, demotivating the individual and ultimately leading to them giving up.</p>
+                    <p>Whilst many people believe that by consuming less food, we will lose weight, this is ultimately the opposite. We need to eat less <strong>junk food</strong>
+                    and eat more calorie dense foods. The reason why many people eat so much junk food but feel hungry is because these foods do not contain much fibre, protein
+                    or any of the essential nutrients we need. Instead they are mainly carb focused and because of the processed oils and sugars, this only increases our brains
+                    need to consume more of these junky foods. Now, before all your hopes and dreams of junk food is crushed, you can still eat it on a caloric deficit, because 
+                    your body will be burning more calories than your maintenance regardless but I suggest against it. Instead, try eating low sugar / sugar free substitutes or
+                    creating protein / healthy alternatives. Remember, your diet is not all just salad and eggs. Have some dessert oats, frozen berries and yoghurt, etc. Tracking 
+                    is something I would consider essential for the first couple years of dieting. <br><br>
+                    Tracking your calories, protein intake, etc are crucial steps to prevent over / 
+                    under-eating and ensuring that you can slowly create a mindset for the future to not rely on tracking but on portion sizes and micronutrients. To begin tracking,
+                    find your maintenance calories, subtract between 200-500 calories from your maintenance calories depending on how fast you want to lose the weight. Remember, the
+                    faster, the less energy you will have, decreased mental clarity and motivation. <strong>Do this at your own risk.</strong><br><br>
+                    For more a sustainable approach, stick to 200-300 and 
+                    always eat 2-3 grams per kg of bodyweight in protein to keep yourself satiated and to prevent muscle loss whilst losing fat. Include weight training and low 
+                    intensity cardio (10k - 15k steps a day). Remember, it will take time. Take it easy, eat more clean and whole foods and reward yourself with a day or two off 
+                    once you have seen good progress to give your mind and body a break. Its a long process, but it is all the whilst worth it. </p>
+                </div>
+
+                <div id="tipsforcalories">
+                    <h1>Tips and Tricks</h1>
+                    <p>Remember, make dieting fun and enjoy your meals. Look forward to waking up and eating nutritious food and feeling good. Some personal advice I would give
+                        is that try be creative and include more fruits (especially berries) with low fat yoghurts. Include protein bars, however do not be too reliant as they 
+                        are still quite proccessed. <br><br>
+                        Avoid drinking your calories, always try eating it so you feel more full. Drink lots of water & replace any sodas/beverages with no sugar alternatives (same with sauces).<br><br>
+                        If you are more on the cheaper side & do not mind eating less "appealing" food, try my method of tuna, low fat mince, frozen veges and diced tomatoes. Cheap, but disgusting looking :)
+                        <br><br>
+                        As said before, every so often have a cheat day. Dont go too overboad, but remember that sometimes even with a cheat day, you can still lose weight for the week if your calories are under.<br><br>
+                        Some days / weeks, your scale may not go down but just wait. Please do not give up. Sometimes it will fluctuate, but you will lose weight no matter what on a calorie deficit.<br><br>
+                        <strong>ALSO REMEMBER, CUT OUT OIL SINCE THE CALORIES ARE SO HIGH AND MEASURE ANY SAUCES / SPECIAL SEASONINGS CAUSE THEY HAVE CALORIES!!!</strong>
+                    </p>
                 </div>
             </div>
-            <div id="calorieconverter">
-                <div id="calorieconverter-div">
-                    <form id="calorie-form" action="" method="post" name="calorie-form"> 
-                        <h1 id="calcontitle">Calorie Converter</h1>
-                        <h2 id="valueinput">Value Input:</h2>
-                        <input id="input" type="number">
-                        <h2 id="conversion">Conversion Type:</h2>
-                        <select id="selected" name="selected">
-                            <option value="0" id="options">Choose Conversion</option>
-                            <option value="1" id="options">Kilojoule to Calorie</option>
-                            <option value="2" id="options">Calorie to Kilojoule</option>
-                        </select>
-                       <input type="submit" id="convert-btn" value="Submit" name="submit"></input>
-                       
-                    </form>
-                    <div id="results-div"></div>
-                    <input type="button" id="reset-btn" name="reset-btn" value="reset">
-                </div>
+        </div>
+
+        <div id="calorieconverter">
+            <div id="calorieconverter-div">
+                <form id="calorie-form" action="" method="post" name="calorie-form"> 
+                    <h1 id="calcontitle">Calorie Converter</h1>
+                    <h2 id="valueinput">Value Input:</h2>
+                    <input id="input" type="number">
+                    <h2 id="conversion">Conversion Type:</h2>
+                    <select id="selected" name="selected">
+                        <option value="0" id="options">Choose Conversion</option>
+                        <option value="1" id="options">Kilojoule to Calorie</option>
+                        <option value="2" id="options">Calorie to Kilojoule</option>
+                    </select>
+                   <input type="submit" id="convert-btn" value="Submit" name="submit"></input>
+                   <div id="results-div"></div>
+                </form>
+                
+                <input type="button" id="reset-btn" name="reset-btn" value="Reset"> 
+                <!-- do functionality for reset button -->
             </div>
         </div>
         
