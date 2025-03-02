@@ -301,8 +301,21 @@ body {
     animation-range: entry 0 cover 40%;
 }
 
-#calorieconverter {
+#calorieconverter, #linkstohealthsites {
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0 cover 20%;
+}
+
+#linkstohealthsites { 
+    background-color: #ffffff;
+    color:#4dc84d;
+    margin: 5rem 5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+#linkstofood, #linkstolifts {
+    text-align: center;
+    width: 40%;
 }
