@@ -22,7 +22,7 @@ body {
 #navbar { 
     position: fixed;
     top: 0%;
-    background-color: #ffffff;
+    background-color: #4dc84d;
     width: 100%;
     height: 4.2rem;
     z-index: 1;
@@ -46,7 +46,7 @@ body {
 
 #navbar > nav > a > li {
     margin: 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 1.68rem;
 }
 
@@ -102,6 +102,7 @@ body {
     border-radius: 20px;
     margin: 0 auto;
     width: 90vw;
+    height: 60rem;
 }
 
 #calorietext { 
@@ -114,19 +115,22 @@ body {
 
 #whatarecalories, #trackingcalories, #tipsforcalories { 
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
     word-spacing: 0.27rem;
     background-color: #4dc84d;
     border-radius: 40px;
     padding: 20px;
     width: 40vw;
     color: white;
+    height: auto;
+   
     
 }
 
+
 #whatarecalories > h1, #trackingcalories > h1, #tipsforcalories > h1 { 
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     
 }
 
@@ -245,12 +249,16 @@ body {
 }
 
 #innerfooddiv { 
-    background-color: #4dc84d;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     border-radius: 40px;
 }
 
-#innerfooddiv > img, p { 
+#innerfooddiv > p {
+    font-size: 1.2rem;
+}
+
+#innerfooddiv > p { 
     padding: 5px;
     font-size: 1.2rem;
 }
