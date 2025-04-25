@@ -2,8 +2,22 @@
     --button-width: 400px;
     --background-color: rgb(239, 247, 222);
     --h1textsize: 50px;
-    --h1color: lightgreen; 
+    --h1color: #7ED6A5; 
     --calorieh1: rgb(0, 0, 0); 
+}
+
+
+@keyframes appear {
+
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to { 
+        opacity: 1;
+        scale: 1;
+    }
+    
 }
 
 
@@ -11,27 +25,24 @@ body {
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
     margin: 0;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: sans-serif;
     
 }
 
-body { 
-    color: rgb(0, 0, 0); 
-}
 
 #navbar { 
     position: fixed;
     top: 0%;
-    background-color: #4dc84d;
+    background-color: #ffffff;
     width: 100%;
-    height: 4.2rem;
+    height: 60px;
     z-index: 1;
 }
 
 #navbar > nav {
     display: flex;
     text-align: center;
-    justify-content: right;
+    justify-content: center;
     text-decoration: none; 
     list-style: none;
     gap: 10rem;
@@ -46,30 +57,38 @@ body {
 
 #navbar > nav > a > li {
     margin: 20px;
-    color: rgb(255, 255, 255);
-    font-size: 1.68rem;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
 }
-
-
 
 #heading {
-    background-color: #4dc84d;
-    color: white;
+    background: linear-gradient(#2eaa4f, #36e745);
     font-size: 2em;
-    margin: 0 auto; /*top right bottom left */
-    margin-top: 20vh;
-    padding: 2rem;
-    width: 40vw;
-    display: flex;
-    border-radius: 100px;
+    margin: 100px 100px 0 100px;
+    width: 90%;
+    border-radius: 20px;
+    height: 700px;
+    
 }
 
-#heading > h1 { 
-    margin-top: 8rem;
+
+#heading > h1{ 
+    color: white;
+    font-size: 80px;
+    padding: 40px;
+    padding-top: 200px;
+    text-align: left;
+}
+
+#heading > h3 { 
+    color: rgb(250, 250, 250);
+    text-align: left;
+    padding-left: 40px;
+
 }
 
 #sidetext { 
-    font-size: 1.75rem;
+    font-size: 40px;
 }
 
 #food1 { 
@@ -86,51 +105,48 @@ body {
 .calorietitle { 
     text-align: center;
     color: var(--calorieh1);
-    font-size: 70px;
+    font-size: 50px;
     width: auto;
     height: auto;
-    margin-top: 10rem;
+    margin-top: 438px;
 }
 
-#firstitle { 
-    margin-top: 35rem;
-}
 
 #calories { 
-    margin-top: 0rem;
     background-color: white;
     border-radius: 20px;
-    margin: 0 auto;
-    width: 90vw;
-    height: 60rem;
 }
 
 #calorietext { 
     display: flex;
-    gap: 20px;
-    padding: 20px;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 #whatarecalories, #trackingcalories, #tipsforcalories { 
     text-align: center;
-    font-size: 25px;
-    word-spacing: 0.27rem;
-    background-color: #4dc84d;
+    font-size: 20px;
+    background: linear-gradient(#2eaa4f, #36e745);
     border-radius: 40px;
     padding: 20px;
-    width: 40vw;
     color: white;
-    height: auto;
+    width: 90%;
    
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
 }
 
+#trackingcalories, #tipsforcalories {
+    margin-top: 100px;
+}
 
 #whatarecalories > h1, #trackingcalories > h1, #tipsforcalories > h1 { 
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     
 }
 
@@ -216,7 +232,6 @@ body {
 }
 
 #whattoeat { 
-    background-color: white;
     margin: 0 5rem;
     height: auto; 
     border-radius: 40px;
@@ -232,74 +247,6 @@ body {
 
 }
 
-#whattoeat > #outerfooddiv {
-    display: grid;
-    grid-template-rows: min-content; /*ensures that first line is even and doesnt overflow */
-    gap: 2rem;
-    width: 80%;
-    margin: 0 auto;
-    grid-auto-flow: column;
-    overflow-x: scroll;
-    overscroll-behavior-inline: contain; /*if someone scrolls to the end, it wont pull the page or distort it */
-    
-}
-
-#outerfooddiv { 
-    border-radius: 40px;
-}
-
-#innerfooddiv { 
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border-radius: 40px;
-}
-
-#innerfooddiv > p {
-    font-size: 1.2rem;
-}
-
-#innerfooddiv > p { 
-    padding: 5px;
-    font-size: 1.2rem;
-}
-
-#whattoeat > #outerfooddiv > #innerfooddiv > img{ 
-    
-    padding: 1rem;
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 40px;
-}
-
-#training { 
-    display: flex;
-    justify-content: space-between;
-    margin: 0 5rem;
-    color: white;
-    border: 2px solid;
-    background-color: #4dc84d;
-    border-radius: 40px;
-    
-}
-
-#cardio, #weightlifting { 
-    padding: 0 5rem 0 5rem;
-    
-}
-
-@keyframes appear {
-
-    from{
-        opacity: 0;
-        scale: 0.5;
-    }
-    to { 
-        opacity: 1;
-        scale: 1;
-    }
-    
-}
 
 
 
@@ -309,21 +256,9 @@ body {
     animation-range: entry 0 cover 40%;
 }
 
-#calorieconverter, #linkstohealthsites {
+#calorieconverter{
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0 cover 20%;
 }
 
-#linkstohealthsites { 
-    background-color: #ffffff;
-    color:#4dc84d;
-    margin: 5rem 5rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-#linkstofood, #linkstolifts {
-    text-align: center;
-    width: 40%;
-}
